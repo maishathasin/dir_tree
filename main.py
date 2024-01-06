@@ -1,7 +1,3 @@
-import json
-import os
-
-
 
 # Function to format tree with info with children and depth
 def format_tree_info( structure,node='root', prefix="", depth=0, is_last=True):

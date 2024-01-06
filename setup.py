@@ -8,10 +8,6 @@ setup(
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     author='mai314',
-    url='https://github.com/yourusername/yourproject',
-    install_requires=[
-        # List your project's dependencies here,
-        # e.g., 'requests >= 2.19.1',
-    ],
+    url='https://github.com/maishathasin/dir_tree',
     python_requires='>=3.6',
 )
