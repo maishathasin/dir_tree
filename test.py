@@ -20,6 +20,37 @@ directory_tree = format_tree(sample_structure)
 result_string = f"\nFilter Test:\n{filtered_tree}\nSearch Test:\n{search_result}\nTree with Node Information:\n{tree_with_info}\nDirectory Structure:\n{directory_tree}"
 print(result_string)
 
+'''
+Filter Test:
+├── child1
+│   ├── grandchild1
+│   └── grandchild2
+├── root
+│   ├── grandchild1
+│   ├── grandchild2
+│   └── grandchild3
+└── child2
+    └── grandchild3
+Search Test:
+root -> child1 -> grandchild2
+Tree with Node Information:
+└── root (Children: 2, Depth: 0)
+    ├── child1 (Children: 2, Depth: 1)
+    │   ├── grandchild1 (Children: 0, Depth: 2)
+    │   └── grandchild2 (Children: 0, Depth: 2)
+    └── child2 (Children: 1, Depth: 1)
+        └── grandchild3 (Children: 0, Depth: 2)
+
+Directory Structure:
+└── root
+    ├── child1
+    │   ├── grandchild1
+    │   └── grandchild2
+    └── child2
+        └── grandchild3
+
+'''
+
 
 # Authentication and GitHub Initialization
 token = ''
@@ -56,3 +87,12 @@ print('output\n',format_tree_info(git_tree(g, 'mori.css')))
 print(search(git_tree(g, 'mori.css'), 'docs-pic.png'))
 # return: root -> docs-pic.png
 
+print(search(git_tree(g, 'mori.css'), 'docs-pic.png'))
+# basic info 
+l = get_info(sample_structure)
+print(l)
+
+'''
+Total files: 3
+Maximum Depth: 2
+File type distribution: {'grandchild1': 1, 'grandchild2': 1, 'grandchild3': 1}'''

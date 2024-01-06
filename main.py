@@ -5,6 +5,7 @@ import os
 
 # Function to format tree with info with children and depth
 def format_tree_info( structure,node='root', prefix="", depth=0, is_last=True):
+    print(structure)
 
     tree = ""
     num_children = len(structure.get(node, []))
@@ -14,7 +15,7 @@ def format_tree_info( structure,node='root', prefix="", depth=0, is_last=True):
         children = structure[node]
         for i, child in enumerate(children):
             extension = "    " if is_last else "│   "
-            tree += format_tree_info(child, structure, prefix + extension, depth + 1, i == len(children) - 1)
+            tree += format_tree_info( structure,child, prefix + extension, depth + 1, i == len(children) - 1)
     return tree
 
 
@@ -85,6 +86,73 @@ def format_tree(structure):
     for i, root in enumerate(roots):
         tree += format_tree(root, is_last=(i == len(roots) - 1))
     return tree.strip()
+
+def max_depth(structure, node='root', current_depth=0):
+    if not structure.get(node):  # If the node has no children
+        return current_depth
+    
+    depths = []
+    for child in structure[node]:
+        if child in structure:  # Check if the child is a directory
+            depths.append(max_depth(structure, child, current_depth + 1))
+    
+    return max(depths) if depths else current_depth
+
+def count_files(structure, node='root'):
+    file_count = 0
+
+    # Check if the current node is a file (indicated by an empty list)
+    if structure.get(node) == []:
+        return 1
+
+    # If the current node is a directory, iterate through its children
+    for child in structure.get(node, []):
+        file_count += count_files(structure, child)
+
+    return file_count
+
+
+def file_type_distribution(structure, node='root'):
+    distribution = {}
+
+    def add_extension(file_name):
+        ext = file_name.split('.')[-1]
+        if ext not in distribution:
+            distribution[ext] = 1
+        else:
+            distribution[ext] += 1
+
+    # Check if the current node is a file
+    if structure.get(node) == []:
+        add_extension(node)
+    else:
+        # If the current node is a directory, iterate through its children
+        for child in structure.get(node, []):
+            if structure.get(child) == []:
+                add_extension(child)
+            else:
+                child_distribution = file_type_distribution(structure, child)
+                for ext, count in child_distribution.items():
+                    distribution[ext] = distribution.get(ext, 0) + count
+
+    return distribution
+
+
+def get_info(structure, node='root'):
+    total_files = count_files(structure)
+    depth = max_depth(structure)
+    file_type = file_type_distribution(structure)
+
+    res = (
+        f"Total files: {total_files}\n"
+        f"Maximum Depth: {depth}\n"
+        f"File type distribution: {file_type}\n"
+    )
+    return res
+
+
+
+
 
 
 
