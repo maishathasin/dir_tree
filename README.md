@@ -1,9 +1,17 @@
 # dir tree
 
+![Python version](https://img.shields.io/badge/python-3.x-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
 dir tree is a Python package designed to process hierarchical structures such as directory trees or JSON files. It provides functionalities to visualize the structure as a tree, search for specific nodes, and filter nodes based on custom criteria. 
 
 Input: JSON/dictionary/github directory
 Output: String 
+
+## Screenshots
+![sc1](sc1.png)
+![sc2](sc2.png)
+
 
 
 ## Features
