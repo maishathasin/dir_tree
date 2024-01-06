@@ -3,10 +3,7 @@
 ![Python version](https://img.shields.io/badge/python-3.x-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-dir tree is a Python package designed to process hierarchical structures such as directory trees or JSON files. It provides functionalities to visualize the structure as a tree, search for specific nodes, and filter nodes based on custom criteria. 
-
-Input: JSON/dictionary/github directory
-Output: String 
+dir tree is a Python package designed to visualise  hierarchical structures such as directory trees or JSON files. It provides functionalities to visualize the structure as a tree, search for specific nodes, and filter nodes based on custom criteria. 
 
 ## Screenshots
 ![sc1](sc1.png)
@@ -20,8 +17,7 @@ Output: String
 |-------------------------|-------------------------------------------------------------------------------------------------|
 | `format_tree_info(structure)`      | Formats a tree with detailed information about each node's children and depth.                  |
 | `search(structure, target)`                | Searches for a specific file/folder in the structure and returns its path.                      |
-| `filter(structure, criteria)`                | Filters the tree based on a given criteria (Bool)
-function.                                            |
+| `filter(structure, criteria)`                | Filters the tree based on a given criteria (Bool)function.|
 | `format_tree(structure)`           | Formats and returns a basic representation of the tree structure.                               |
 | `max_depth(structure)`             | Calculates and returns the maximum depth of the tree structure.                                 |
 | `count_files(structure)`           | Counts and returns the total number of files within the structure.                              |
