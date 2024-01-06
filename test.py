@@ -29,6 +29,30 @@ print(auth)
 g = Github(auth=auth)
 print(g)
 
-
 # Visulise the repo
-print(format_tree(git_tree(g, 'mori.css')))
+print('output\n',format_tree_info(git_tree(g, 'mori.css')))
+'''
+
+└── root (Children: 14, Depth: 0)
+    ├── .github (Children: 1, Depth: 1)
+    │   └── workflows (Children: 1, Depth: 2)
+    │       └── static.yml (Children: 0, Depth: 3)
+    ├── LICENSE.txt (Children: 0, Depth: 1)
+    ├── README.md (Children: 0, Depth: 1)
+    ├── Vintage-cats-2.jpeg (Children: 0, Depth: 1)
+    ├── blog.html (Children: 0, Depth: 1)
+    ├── blog1.png (Children: 0, Depth: 1)
+    ├── blog2.png (Children: 0, Depth: 1)
+    ├── docs-pic.png (Children: 0, Depth: 1)
+    ├── docs-pic2.png (Children: 0, Depth: 1)
+    ├── icon-small.png (Children: 0, Depth: 1)
+    ├── index.html (Children: 0, Depth: 1)
+    ├── mori.css (Children: 0, Depth: 1)
+    ├── mori.min.css (Children: 0, Depth: 1)
+    └── package.json (Children: 0, Depth: 1)
+'''
+# Search for a file and return the file path
+# cannot access hidden files
+print(search(git_tree(g, 'mori.css'), 'docs-pic.png'))
+# return: root -> docs-pic.png
+
