@@ -1,4 +1,4 @@
-<h1 align="center"> # dir tree </h1>
+<h1 align="center"> dir tree </h1>
 
 ![Python version](https://img.shields.io/badge/python-3.x-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
