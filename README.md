@@ -5,13 +5,19 @@ dir tree is a Python package designed to process hierarchical structures such as
 Input: JSON/dictionary/github directory
 Output: String 
 
-Features:
-Input:
-    JSON : format 
-    Dictioanary:
-    Github directory: etc 
 
+## Features
 
+| Function                | Description                                                                                     |
+|-------------------------|-------------------------------------------------------------------------------------------------|
+| `format_tree_info`      | Formats a tree with detailed information about each node's children and depth.                  |
+| `search`                | Searches for a specific file/folder in the structure and returns its path.                      |
+| `filter`                | Filters the tree based on a given criteria function.                                            |
+| `format_tree`           | Formats and returns a basic representation of the tree structure.                               |
+| `max_depth`             | Calculates and returns the maximum depth of the tree structure.                                 |
+| `count_files`           | Counts and returns the total number of files within the structure.                              |
+| `file_type_distribution`| Calculates the distribution of different file types within the structure.                       |
+| `git_tree`              | Generates a dictionary of the repository structure.                                  |
 
 # USAGE 
 
