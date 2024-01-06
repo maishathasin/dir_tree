@@ -10,14 +10,17 @@ Output: String
 
 | Function                | Description                                                                                     |
 |-------------------------|-------------------------------------------------------------------------------------------------|
-| `format_tree_info`      | Formats a tree with detailed information about each node's children and depth.                  |
-| `search`                | Searches for a specific file/folder in the structure and returns its path.                      |
-| `filter`                | Filters the tree based on a given criteria function.                                            |
-| `format_tree`           | Formats and returns a basic representation of the tree structure.                               |
-| `max_depth`             | Calculates and returns the maximum depth of the tree structure.                                 |
-| `count_files`           | Counts and returns the total number of files within the structure.                              |
-| `file_type_distribution`| Calculates the distribution of different file types within the structure.                       |
-| `git_tree`              | Generates a dictionary of the repository structure.                                  |
+| `format_tree_info(structure)`      | Formats a tree with detailed information about each node's children and depth.                  |
+| `search(structure, target)`                | Searches for a specific file/folder in the structure and returns its path.                      |
+| `filter(structure, criteria)`                | Filters the tree based on a given criteria (Bool)
+function.                                            |
+| `format_tree(structure)`           | Formats and returns a basic representation of the tree structure.                               |
+| `max_depth(structure)`             | Calculates and returns the maximum depth of the tree structure.                                 |
+| `count_files(structure)`           | Counts and returns the total number of files within the structure.                              |
+| `file_type_distribution(structure)`| Calculates the distribution of different file types within the structure.                       |
+| `git_tree(g, repo_name)`              | Generates a dictionary of the repository structure.                                  |
+| `get_info(structure)`              | Prints out basic info about directories  Maximum depth, Number of files, and File distribution                                |
+
 
 # USAGE 
 
