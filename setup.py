@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='repo_tree',
+    name='repo_tree314',
     version='0.1',
     packages=find_packages(),
     description='Utility Package that visualises Tree Structure of Github repos using Personal tokens and basic dictionaries',
